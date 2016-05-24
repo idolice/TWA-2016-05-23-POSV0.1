@@ -20,11 +20,13 @@ function printInventory(inputs) {
     var text="***<没钱赚商店>购物清单***\n";
     for(var i=0;i<products.length;i++)
     {
-      text=text+"名称："+products[i].name+"，数量："+products[i].num+products[i].unit+"，单价："+products[i].price.toFixed(2)+"（元），小计："+products[i].num.*products[i].price+"（元）"+"\n";
+      var val=products[i].num.*products[i].price;
+      text=text+"名称："+products[i].name+"，数量："+products[i].num+products[i].unit.toFixed(2)+"，单价："+products[i].price.toFixed(2)+"（元），小计："+val.toFixed(2).+"（元）"+"\n";
       total+=products[i].num*products[i].price;
 
     };
     text=text+"总计："+total.toFixed(2)+"（元）";
+    text=text+"**********************"
     console.log(text);
 
 
